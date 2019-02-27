@@ -1,21 +1,27 @@
 <template>
   <div>
-    <Header />
+    <Header/>
     <nuxt/>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
+import Header from "@/components/Header";
 
 export default {
   components: {
     Header
   }
-}
+};
 </script>
 
 
 <style>
+html {
+  font-family: "Allerta", sans-serif;
+}
 
+body {
+  margin: 0;
+}
 </style>
