@@ -4,29 +4,33 @@
       <h1>Home Page</h1>
     </section>
     <section class="featured-posts">
-      <nuxt-link :to="'/posts/' + 1">
-        <article class="post-preview">
-          <div class="post-thumbnail" style="background-image: url('https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg')"></div>
-          <div class="post-content">
-            <h1>Post Title</h1>
-            <p>Preview Text</p>
-          </div>
-        </article>
-      </nuxt-link>
-      <nuxt-link :to="'/posts/' + 2">
-        <article class="post-preview">
-          <div class="post-thumbnail" style="background-image: url('https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg')"></div>
-          <div class="post-content">
-            <h1>Post Title 2</h1>
-            <p>Preview Text 2</p>
-            </div>
-        </article>
-      </nuxt-link>
+      <PostPreview
+      id="1"
+      thumbnail="https://www.goodfood.com.au/content/dam/images/h/0/f/a/q/i/image.related.wideLandscape.940x529.h0fa4n.png/1515456591895.jpg"
+      title="Post 1"
+      previewText="This is post 1" />
+      <PostPreview
+      id="2"
+      thumbnail="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/02/07/15/chinese.jpg?w968h681"
+      title="Post 2"
+      previewText="This is post 2" />      
+      <PostPreview
+      id="3"
+      thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI2xb-55P8uByCC-AlGem22JTzO8ZUrTeCaE74iHGEj5w92i-N"
+      title="Post 3"
+      previewText="This is post 3" />
     </section>
   </div>
 </template>
 
 <script>
+import PostPreview from '@/components/Posts/PostPreview'
+
+export default {
+  components: {
+    PostPreview
+  }
+}
 </script>
 
 <style>
@@ -67,41 +71,5 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
