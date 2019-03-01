@@ -1,23 +1,15 @@
 <template>
-  <div class="posts-page">
-    <input type="text" v-model="postId">
-    <button @click="onLoadUser">Find Post</button>
-  </div>
+<PostList />
 </template>
 
 <script>
+import PostList from '@/components/Posts/PostList'
+
 export default {
-  data() {
-    return {
-      postId: ""
-    };
-  },
-  methods: {
-    onLoadUser() {
-      this.$router.push("/posts/" + this.postId);
-    }
+  components: {
+    PostList
   }
-};
+}
 </script>
 
 <style scoped>
